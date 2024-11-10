@@ -1,7 +1,9 @@
 import { Router } from "express";
-import { insertProduct, getProductDetailsForCard } from "../controllers/tienda.js";
+import { insertProduct, getProductDetailsForCard, getProductDetailsForCardId, getProductsByQuery } from "../controllers/tienda.js";
 const router = Router();
 
-router.post("/product", insertProduct);
-router.get("/product", getProductDetailsForCard);
+router.post("/addSale", insertProduct);
+router.get("/item/:q", getProductsByQuery);
+router.get("/sales", getProductDetailsForCard);
+router.get("/items/:id", getProductDetailsForCardId);
 export default router;
